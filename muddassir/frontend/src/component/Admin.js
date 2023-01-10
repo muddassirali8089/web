@@ -6,20 +6,33 @@ import{Addmenuitem} from "../Service/MenuItemApi";
 
 function Admin() {
 
+
+
+
+ 
+  
   const [menuitem , setMenuItem] = useState({
 
-    category : "",
+    category : "Pizza",
     id : "",
     name : "",
     price : "",
     Image :"",
+   
     
 
   })
+
+ 
+
   // const { firstname,lastname, email,phonenum , adress , city} = customerinfo;
 
   const handleChange  = (e) =>{
+
+   
     setMenuItem({...menuitem  , [e.target.name] : e.target.value })
+
+    console.log(menuitem)
   }
 
 
@@ -43,9 +56,29 @@ function Admin() {
       
         
  <form >
+
+
+ <div>
+
+<label>
+
+  What do we eat?
+
+  
+
+</label>
+
+</div>
    <div class="form-group col-md-6">
      <label for="formGroupExampleInput">Category</label>
-     <input    onChange={(e) => handleChange(e)}  name = "category"  type="text" class="form-control" id="formGroupExampleInput" placeholder="Category" />
+     <div>
+      <select name='category' onChange={handleChange}>
+        <option value="Pizza">Pizza</option>
+        <option value="Burger">Burger</option>
+        <option value="MilkShake">MilkShake</option>
+      </select>
+      
+    </div>
    </div>
    <div class="form-group col-md-6">
      <label for="formGroupExampleInput2">ID</label>
